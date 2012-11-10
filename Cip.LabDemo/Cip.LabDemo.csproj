@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{70E51FEF-ADBD-4584-BBAE-3E3F9F6940D6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cip.LabDemo</RootNamespace>
+    <AssemblyName>ColourImageProcessing</AssemblyName>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>true</GenerateManifests>
+    <ManifestCertificateThumbprint>E4FB423775368D8314DE73377F83C42CE4595F83</ManifestCertificateThumbprint>
+    <ManifestKeyFile>ColourImageProcessing_TemporaryKey.pfx</ManifestKeyFile>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>cip_icon.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <SignAssembly>false</SignAssembly>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Colour Image Processing</ProductName>
+    <PublisherName>Disco Publisher</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBoxCip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Cip.LabDemo.Strings.ru-RU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cip.LabDemo.Strings.ru-RU.resx</DependentUpon>
+    </Compile>
+    <Compile Include="cipDescriptionFunctions.cs" />
+    <Compile Include="DialogBoxes\FormBloom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\FormHistogram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\FormHistogram.Designer.cs">
+      <DependentUpon>FormHistogram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogBoxes\FormIntensitySaturation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\FormIntensitySaturation.Designer.cs">
+      <DependentUpon>FormIntensitySaturation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogBoxes\FormLightnessContrast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\FormLightnessContrast.Designer.cs">
+      <DependentUpon>FormLightnessContrast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogBoxes\FormMatrixFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\FormMatrixFilter.Designer.cs">
+      <DependentUpon>FormMatrixFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogBoxes\FormResample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\FormResample.Designer.cs">
+      <DependentUpon>FormResample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogBoxes\FormSharpness.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\FormSharpness.Designer.cs">
+      <DependentUpon>FormSharpness.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogBoxes\FormSmoothing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\FormSmoothing.Designer.cs">
+      <DependentUpon>FormSmoothing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogBoxes\FormThreshold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxes\FormThreshold.Designer.cs">
+      <DependentUpon>FormThreshold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageOutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LanguageSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.Logic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutBoxCip.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutBoxCip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutBoxCip.ru-RU.resx">
+      <DependentUpon>AboutBoxCip.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\FormBloom.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormBloom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\FormBloom.ru-RU.resx">
+      <DependentUpon>FormBloom.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\FormHistogram.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormHistogram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\FormHistogram.ru-RU.resx">
+      <DependentUpon>FormHistogram.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\FormIntensitySaturation.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormIntensitySaturation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\FormIntensitySaturation.ru-RU.resx">
+      <DependentUpon>FormIntensitySaturation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\FormLightnessContrast.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormLightnessContrast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\FormLightnessContrast.ru-RU.resx">
+      <DependentUpon>FormLightnessContrast.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\FormMatrixFilter.resx">
+      <DependentUpon>FormMatrixFilter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\FormMatrixFilter.ru-RU.resx">
+      <DependentUpon>FormMatrixFilter.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\FormResample.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormResample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\FormResample.ru-RU.resx">
+      <DependentUpon>FormResample.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\FormSharpness.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormSharpness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\FormSharpness.ru-RU.resx">
+      <DependentUpon>FormSharpness.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\FormSmoothing.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormSmoothing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\FormSmoothing.ru-RU.resx">
+      <DependentUpon>FormSmoothing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\FormThreshold.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormThreshold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxes\FormThreshold.ru-RU.resx">
+      <DependentUpon>FormThreshold.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.ru-RU.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Cip.LabDemo.Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Cip.LabDemo.Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Cip.LabDemo.Strings.ru-RU.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Cip.LabDemo.Strings.ru-RU.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Resources\LabDemoResources.cs" />
+    <Compile Include="Resources\Cip.LabDemo.Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cip.LabDemo.Strings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Fig3.40_a_sharpness_Moon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Fig6.08.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Fig6.16a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Fig6.30.01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Fig6.37a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Fig6.38a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Ralph08.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Contrast\Fig6.35_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Contrast\Fig6.35_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Contrast\Fig6.35_5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Description\complementary_colours.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Description\complementary_colours_functions.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Description\cute_colour_range_example.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Description\cute_colour_range_example_strawberries_05.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Description\equalization_example_functions.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Description\equalization_example_modifyed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Description\laplasian_masks.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Description\sharpness_example.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Description\sharpness_example_difference.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Description\smoothing_example_5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Icons\background_image.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cip.Components\Cip.Components.csproj">
+      <Project>{97E10D79-9CA5-4342-99BB-4619003EBAEC}</Project>
+      <Name>Cip.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cip.Lib\Cip.Lib.csproj">
+      <Project>{169C267E-7EC3-4003-900D-EBB70C89659E}</Project>
+      <Name>Cip.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BaseApplicationManifest Include="Properties\app.manifest" />
+    <None Include="Resources\Documents\description.ColorRangeExcision.rtf" />
+    <None Include="Resources\Documents\description.Dilate.rtf" />
+    <None Include="Resources\Documents\description.Edge.rtf" />
+    <None Include="Resources\Documents\description.Erode.rtf" />
+    <None Include="Resources\Documents\description.GrayScale.rtf" />
+    <None Include="Resources\Documents\description.HistogramEqualize.rtf" />
+    <None Include="Resources\Documents\description.IntensityAndSaturation.rtf" />
+    <None Include="Resources\Documents\description.IntensityCorrection.rtf" />
+    <None Include="Resources\Documents\description.LightnessAndContrast.rtf" />
+    <None Include="Resources\Documents\description.Negative.rtf" />
+    <None Include="Resources\Documents\description.Sepia.rtf" />
+    <None Include="Resources\Documents\description.Sharpness.rtf" />
+    <None Include="Resources\Documents\description.Smoothing.rtf" />
+    <None Include="Resources\Documents\description.Split.rtf" />
+    <None Include="Resources\Documents\description.Threshold.rtf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Description\GrayScaled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Description\Threshold.Ralph08.Example.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Description\hue.colorcube.example.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Documents\description.Bloom.rtf" />
+    <None Include="Resources\Images\Description\sepia.girl.example.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Subaru_Legacy_B4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Description\Subaru_Legacy_B4.bloomed.factor-2.rad-4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Contrast\Fig6.35_5_edited.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Contrast\Fig6.35_1_edited.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Contrast\Fig6.35_3_edited.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Description\negative_description.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Examples\example_text_Fig4_19_a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Documents\description.Stamping.rtf" />
+    <None Include="Resources\Images\Examples\example_text_smoothing.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Documents\description.HistogramNormalization.rtf" />
+    <None Include="Resources\Images\Description\pl_girl_equalized.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Description\finger-print.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Description\finger-print.threshold.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Icons\cip_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cip.Config.xml" />
+    <Content Include="cip_icon.ico" />
+    <None Include="Resources\Images\Description\normalization_example.jpg" />
+    <Content Include="Resources\Images\Icons\help[16x16].bmp" />
+    <Content Include="Resources\Images\Icons\quit[16x16].bmp" />
+    <None Include="Resources\Images\Examples\example_text_color_result_cut_clr.jpg" />
+    <None Include="Resources\Images\Examples\example_text_color_result.jpg" />
+    <None Include="Resources\Images\Examples\example_text_color.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

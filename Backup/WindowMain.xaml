@@ -1,0 +1,106 @@
+﻿<Window x:Class="Cip.WpfDemo.WindowMain"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Colour Image Processing [WPF Labwork]" Height="800" Width="1000" WindowStartupLocation="CenterScreen"
+    Loaded="Window_Loaded" >
+    
+    <Grid >
+        
+        
+        <Menu Name="menuMain"  HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Open" Click="MenuItem_Open_Click"/>
+                <MenuItem Header="Save" />
+                <Separator />
+                <MenuItem Header="Exit" Click="MenuItem_Exit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Undo" Name="editUndoItem" Click="MenuItem_Undo_Click" />
+                <MenuItem Header="Redo" Name="editRedoItem" Click="MenuItem_Redo_Click" />
+                <Separator />
+                <MenuItem Header="Default" Name="editDefaultItem" Click="MenuItem_Default_Click" />
+            </MenuItem>
+            <MenuItem Header="Tools">
+                <MenuItem Header="Pseudocolor processing">
+                    <MenuItem Header="Gray scale" Click="MenuItem_GrayScale_Click"/>
+                    <MenuItem Header="Negative"  Click="MenuItem_Negative_Click"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="About" Click="MenuItem_About_Click"/>
+                <MenuItem Header="OS Information" Click="MenuItem_OS_Information_Click"/>
+            </MenuItem>
+        </Menu>
+        <TabControl Name="tabControlMain" Margin="0,23,0,30" Grid.ColumnSpan="2" SelectedIndex="1">
+            <TabItem Header="Theory" Name="tabItemTheory">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="253" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" >
+                        <TextBlock Margin="0,3,0,3" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            Methods
+                        </TextBlock>
+                        <StackPanel Margin="0,3,0,3" Grid.Column="0" Orientation="Horizontal">
+                            <Button Margin="3,0,3,0" Width="60" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Name="btnBack">Back</Button>
+                            <Button Margin="3,0,3,0" Width="60" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Name="btnForward">Forward</Button>
+                        </StackPanel>
+                        <ListBox Margin="3,3,3,3" Height="250" Width="Auto" Name="listBoxInfo" HorizontalAlignment="Stretch"  VerticalAlignment="Top"  />
+                        <RichTextBox Margin="3,3,3,3" Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top"></RichTextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Practice WPF" Name="tabItemPracticeWpf">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="483*" />
+                        <RowDefinition Height="199.723*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="479.5*" />
+                        <ColumnDefinition Width="487.5*" />
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Header="Original image" Margin="0,0,3,0" BorderThickness="2">
+                        <Image Margin="0,0,0,0" Name="imageOriginal" Stretch="Fill" />
+                    </GroupBox>
+                    <GroupBox Header="Modified image" Grid.Column="1" Margin="3,0,0,0" BorderThickness="2">
+                        <Image Margin="0,0,0,0" Name="imageModified" Stretch="Fill" />
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Practice" Name="tabItemPractice">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="483*" />
+                        <RowDefinition Height="199.723*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="479.5*" />
+                        <ColumnDefinition Width="487.5*" />
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Header="Original image" Margin="0,0,3,0" BorderThickness="2">
+                        <WindowsFormsHost Name="windowsFormsHost1" xmlns:mcl="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms">
+                            <mcl:PictureBox Name="pictureBoxOriginal" Dock="Fill" />
+                        </WindowsFormsHost>
+                    </GroupBox>
+                    <GroupBox Header="Modified image" Grid.Column="1" Margin="3,0,0,0" BorderThickness="2">
+                        <WindowsFormsHost Name="windowsFormsHost2" xmlns:mcl="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" >
+                            <mcl:PictureBox Name="pictureBoxModifyed" Dock="Fill" />
+                        </WindowsFormsHost>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StatusBar Name="statusBar" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"  Height="30">
+            <StatusBarItem>
+                <TextBlock>Satus</TextBlock>
+            </StatusBarItem>
+        </StatusBar>
+        
+    </Grid>
+    
+</Window>

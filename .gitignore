@@ -1,0 +1,12 @@
+Thumbs.db
+*.csproj.user
+*.exe
+*.pdb
+*/bin/Debug/*
+*/bin/Release/*
+*/bin/*
+*/obj/*
+Demo/Libraries/Windows7.DesktopIntegration.LibraryManagerDemo/bin/
+Demo/Libraries/Windows7.DesktopIntegration.LibraryManagerDemo/obj/
+Demo/
+Windows7/
